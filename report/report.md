@@ -2,9 +2,9 @@
 
 ## Что сделано
 
-- Исправлены ошибки интеграции агента с локальным Ollama: добавлен обход прокси через `NO_PROXY/no_proxy` для `localhost,127.0.0.1` в `langchain-agent/main.py:L99-L106`.
-- Добавлен debug-вывод tool при реальном HTTP-вызове API в `langchain-agent/main.py:L44` и `langchain-agent/main.py:L80`.
-- Повторно выполнены тесты, 5/5 успешны: см. `report/tests.md`.
+- Исправлены ошибки интеграции агента с локальным Ollama: добавлен обход прокси через `NO_PROXY/no_proxy` для `localhost,127.0.0.1` в [`langchain-agent/main.py:L99-L106`](../langchain-agent/main.py#L99-L106).
+- Добавлен debug-вывод tool при реальном HTTP-вызове API в [`langchain-agent/main.py:L44`](../langchain-agent/main.py#L44) и [`langchain-agent/main.py:L80`](../langchain-agent/main.py#L80).
+- Повторно выполнены тесты, 5/5 успешны: см. [`report/tests.md`](./tests.md).
 
 ## LLM и настройка
 
@@ -17,11 +17,11 @@
 
 ## API и поддерживаемые операции
 
-- Выбрано REST API текущего сервиса: `app/main.py`.
-- Доступные эндпоинты сервиса: `POST /users`, `GET /users`, `GET /users/{id}`, `PATCH /users/{id}`, `DELETE /users/{id}` (`app/main.py:L15-L46`).
+- Выбрано REST API текущего сервиса: [`app/main.py`](../app/main.py).
+- Доступные эндпоинты сервиса: `POST /users`, `GET /users`, `GET /users/{id}`, `PATCH /users/{id}`, `DELETE /users/{id}` ([`app/main.py:L15-L46`](../app/main.py#L15-L46)).
 - Операции, которые сейчас использует агент через tools:
-  - `GET /users` и `GET /users/{id}` через `fetch_users_from_api` (`langchain-agent/main.py:L83-L88`).
-  - `POST /users` через `create_user_via_api` (`langchain-agent/main.py:L91-L96`).
+  - `GET /users` и `GET /users/{id}` через `fetch_users_from_api` ([`langchain-agent/main.py:L83-L88`](../langchain-agent/main.py#L83-L88)).
+  - `POST /users` через `create_user_via_api` ([`langchain-agent/main.py:L91-L96`](../langchain-agent/main.py#L91-L96)).
 
 ## Запуск агента
 
@@ -35,11 +35,11 @@ python langchain-agent/main.py "create user via api with name Alex and email ale
 
 ## Где объявлен tool и где реальный вызов API
 
-- Объявления tools: `langchain-agent/main.py:L83-L96`.
-- Реальный HTTP-вызов/обертка: `langchain-agent/main.py:L38-L80`.
+- Объявления tools: [`langchain-agent/main.py:L83-L96`](../langchain-agent/main.py#L83-L96).
+- Реальный HTTP-вызов/обертка: [`langchain-agent/main.py:L38-L80`](../langchain-agent/main.py#L38-L80).
 - Debug-вывод результата tool в консоль:
-  - before-call: `langchain-agent/main.py:L44`
-  - after-call: `langchain-agent/main.py:L80`
+  - before-call: [`langchain-agent/main.py:L44`](../langchain-agent/main.py#L44)
+  - after-call: [`langchain-agent/main.py:L80`](../langchain-agent/main.py#L80)
 
 Фактический фрагмент вывода:
 ```text
@@ -62,14 +62,14 @@ INFO:     127.0.0.1:64936 - "POST /users HTTP/1.1" 201 Created
 ## Контракт ответа агента
 
 - Описание контракта в репозитории:
-  - `README.md:L61-L68`
-  - `langchain-agent/main.py:L30-L34`
-- Программное формирование контракта: `langchain-agent/main.py:L150-L168`.
+  - [`README.md:L61-L68`](../README.md#L61-L68)
+  - [`langchain-agent/main.py:L30-L34`](../langchain-agent/main.py#L30-L34)
+- Программное формирование контракта: [`langchain-agent/main.py:L150-L168`](../langchain-agent/main.py#L150-L168).
 
 ## Тестовые запросы и результаты
 
-- Все 5 запросов и ответы: `report/tests.md`.
+- Все 5 запросов и ответы: [`report/tests.md`](./tests.md).
 
 ## Промпты диалога
 
-- Полный список промптов: `report/prompts.md`.
+- Полный список промптов: [`report/prompts.md`](./prompts.md).
