@@ -73,15 +73,10 @@ Errors: <если есть>
 
 ## 7) Промпт
 ```text
-Briefly inform the user about the task result and perform any follow-up actions (if needed).
-```
-
-## 8) Промпт
-```text
 все проверки прошли с ошибками, исправь их и когда будет успешно выполни повторно тест и зафиксируй результаты в @report/tests.md
 ```
 
-## 9) Промпт
+## 8) Промпт
 ```text
 Подведи итоговый отчет о проделаной работе
 
